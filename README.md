@@ -73,3 +73,33 @@ function ek_register_customizer($wp_customize)
 }
 
 add_action('customize_register', 'ek_register_customizer', 10, 1);
+
+<-------------------------------------------------------------------------------------------------------------------------->
+
+
+    <div class="row" style="padding: 30px;">
+        <div class="col-md-3" style="border-right:1px solid black;border-bottom:1px solid black;">
+            Connecting drivers with advertisement
+        </div>
+        <div class="col-md-3" style="border-right:1px solid black;border-bottom:1px solid black;">
+            Connecting drivers with advertisement
+        </div>
+        <div class="col-md-3" style="border-right:1px solid black;border-bottom:1px solid black;">
+            Connecting drivers with advertisement
+        </div>
+        <div class="col-md-3" style="border-right:1px solid black;border-bottom:1px solid black;">
+            Connecting drivers with advertisement
+        </div>
+        <div class="col-md-3" style="border-right:1px solid black;">
+            Connecting drivers with advertisement
+        </div>
+        <div class="col-md-3" style="border-right:1px solid black;">
+            Connecting drivers with advertisement
+        </div>
+        <div class="col-md-3" style="border-right:1px solid black;">
+            Connecting drivers with advertisement
+        </div>
+        <div class="col-md-3" style="border-right:1px solid black;">
+            Connecting drivers with advertisement
+        </div>
+    </div>
