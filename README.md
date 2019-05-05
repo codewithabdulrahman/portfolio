@@ -103,3 +103,16 @@ add_action('customize_register', 'ek_register_customizer', 10, 1);
             Connecting drivers with advertisement
         </div>
     </div>
+    
+    <---------------------------------------------------------------------------------------------->
+    
+    <div class="row" style="padding: 40px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <?php echo do_shortcode('[wppb-login]')?>
+    </div>
+    <div class="col-md-4">
+        <?php echo do_shortcode('[wppb-register]')?>
+    </div>
+    <div class="col-md-2"></div>
+</div>
