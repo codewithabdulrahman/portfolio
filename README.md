@@ -116,3 +116,15 @@ add_action('customize_register', 'ek_register_customizer', 10, 1);
     </div>
     <div class="col-md-2"></div>
 </div>
+
+
+
+
+<-------------------------  Catagory Code ------------------------------------------->
+<?php $page_object = get_queried_object(); ?>
+<?php $categoryID= $page_object->cat_ID; ?>
+
+<?php query_posts("cat=$categoryID"); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <li><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></li>
+<?php endwhile; endif; ?>
