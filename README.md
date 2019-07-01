@@ -1,6 +1,8 @@
 # portfolio
 just a links of portfolio
 
+https://grokonez.com/frontend/angular/angular-6/angular-6-form-validation-example-template-driven-forms
+
 <h1>abdul.rahman6340@gmail.com</h1>
 
 <b>Wordpress Work</b>
