@@ -5,38 +5,47 @@ https://grokonez.com/frontend/angular/angular-6/angular-6-form-validation-exampl
 
 <h1>abdul.rahman6340@gmail.com</h1>
 
-<b>Wordpress Work</b>
 
-http://imhpackaging.com/  <br>
-http://www.wegrindglobal.com/  <br>
-https://websitesample.name/  <br>
-http://www.sajjadtextile.com/   <br>
-
-
-<b>Magento Work</b>
-
-https://dev.itechdevices.co.uk/    <br>
-https://reliancesolution.co.uk/    <br>
-http://javinci.com/en/    <br>
-
----Catagory page---
-<?php $page_object = get_queried_object(); ?>
-<?php $categoryID= $page_object->cat_ID; ?>
-
-<?php query_posts("cat=$categoryID"); ?>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <li><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></li>
-<?php endwhile; endif; ?>
+{
+  "require":{
+    "sendgrid/sendgrid":"~7"
+  }
+}
+-----
 
 
+<?php
+$curl = curl_init();
 
+curl_setopt_array($curl, array(
+    CURLOPT_URL => "https://api.sendgrid.com/v3/mail/send",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS => "{\r\n  \"personalizations\": [\r\n   
+ {\r\n      \"to\": [\r\n        {\r\n          \"email\": \"devlobb@gmail.com\"\r\n       
+ }\r\n      ],\r\n      \"subject\": \"Welcome to Techhawa!\"\r\n    }\r\n  ],\r\n  
+\"from\": {\r\n    \"email\": \"abdul.rahman6340@gmail.com\"\r\n  },\r\n  \"content\": [\r\n    
+{\r\n      \"type\": \"text/plain\",\r\n      \"value\": \"Hello, World!\"\r\n    }\r\n 
+ ]\r\n}",
+    CURLOPT_HTTPHEADER => array(
+        "authorization: Bearer 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",
+        "cache-control: no-cache",
+        "content-type: application/json"
+    ),
+));
 
-----Single.php----
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-	<?php the_title(); ?>
-	<?php the_content(); ?>
-	<?php echo get_the_date(); ?>
+curl_close($curl);
 
-<?php endwhile; ?>
-<?php endif; ?>
+if ($err) {
+    echo "cURL Error #:" . $err;
+} else {
+    echo $response;
+}
+?>
